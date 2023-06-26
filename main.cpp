@@ -62,7 +62,9 @@ float metoda_numeryczna(float a,float b, float c,float *tablica, int poczatek, i
 
 float metoda_dokladna(float a,float b, float c, int poczatek, int koniec)
 {
-    return (((a*(koniec*koniec*koniec))/3)+((b*(koniec*koniec))/2)+c*4)-(((a*(poczatek*poczatek*poczatek))/3)+((b*(poczatek*poczatek))/2)+c*poczatek);
+    float wynik = ((a * pow(koniec, 3)) / 3) + ((b * pow(koniec, 2)) / 2) + (c * koniec);
+    wynik -= ((a * pow(poczatek, 3)) / 3) + ((b * pow(poczatek, 2)) / 2) + (c * poczatek);
+    return wynik;
 }
 
 void blad(float a,float b, float c,float *tablica, int poczatek, int koniec)
